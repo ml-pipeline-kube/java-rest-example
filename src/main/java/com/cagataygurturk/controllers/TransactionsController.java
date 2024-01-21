@@ -6,6 +6,7 @@ import com.cagataygurturk.services.transaction.TransactionNotFoundException;
 import com.cagataygurturk.services.transaction.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -14,6 +15,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 @Component
+@CrossOrigin(origins = "*")
 @Path("/transactionservice")
 public class TransactionsController {
 
@@ -43,6 +45,7 @@ public class TransactionsController {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("transactions")
     public Response getTransactionTest() throws Exception {
+        System.out.println("masuk");
         try {
             return Response.status(200).entity(
                     transactionService.getTransactionTest()
