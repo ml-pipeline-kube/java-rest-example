@@ -41,6 +41,22 @@ public class TransactionsController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("transactions")
+    public Response getTransactionTest() throws Exception {
+        try {
+            return Response.status(200).entity(
+                    transactionService.getTransactionTest()
+            ).build();
+        } catch (TransactionNotFoundException e) {
+            /**
+             * Transaction with this id could not be found then let us throw Jersey's not found exception
+             */
+            throw new NotFoundException(e.getMessage());
+        }
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("transactions/{id}/sum")
     public Response getSumOfTransaction(@PathParam("id") long id) throws Exception {
         try {

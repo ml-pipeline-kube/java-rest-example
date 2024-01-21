@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public interface TransactionService {
     Transaction getTransactionById(long transactionId) throws TransactionNotFoundException;
+    Transaction getTransactionTest();
 
     Transaction createNewTransaction(double amount, String type);
 

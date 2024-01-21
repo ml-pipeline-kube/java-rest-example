@@ -36,6 +36,12 @@ public class TransactionServiceImpl implements TransactionService {
         return transaction;
     }
 
+    public Transaction getTransactionTest() {
+
+        Transaction transaction = new Transaction(123123, "test");
+        return transaction;
+    }
+
     protected Transaction saveTransactionToRepository(Transaction transaction) {
         return this.repository.saveTransaction(transaction);
     }
