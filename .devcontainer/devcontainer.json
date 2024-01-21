@@ -1,0 +1,11 @@
+{
+    "name": "my-project-devcontainer",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Any generic, debian-based image.
+    "features": {
+        "hcr.io/devcontainers/features/java:1": {
+            "version": "8",
+            "installMaven": true,
+            "mavenVersion": "4.0.0"
+        }
+    }
+}
